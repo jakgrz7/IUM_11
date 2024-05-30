@@ -61,8 +61,8 @@ print(y_train.shape[0], y_test.shape[0], X_train.shape[0], X_test.shape[0])
 num_epochs = 500
 dropout_layer_value = 0.5
 
-print("Number of args given:",len(sys.argv))
-if len(sys.argv) == 2:
+print("Number of args given:",len(sys.argv),sys.argv)
+if len(sys.argv) == 3:
     print("Custom parameters given, epochs:",num_epochs)
     num_epochs = int(sys.argv[1])
     dropout_layer_value = float(sys.argv[2])
