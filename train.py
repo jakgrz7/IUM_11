@@ -62,6 +62,7 @@ num_epochs = 500
 dropout_layer_value = 0.5
 
 if len(sys.argv) == 3:
+    print("Custom parameters given.")
     num_epochs = int(sys.argv[1])
     dropout_layer_value = float(sys.argv[2])
 
