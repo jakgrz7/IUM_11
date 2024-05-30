@@ -48,15 +48,13 @@ for i in range(0, len(plant_id)):
         id = plant_id[i]
 
 scaler = MinMaxScaler()
-X = scaler.fit_transform(X)
-
-X = X.todense()
-Y = Y.todense()
+X = scaler.fit_transform(np.array(X))
 
 encoder = OneHotEncoder()
-y_onehot = encoder.fit_transform(Y.reshape(-1,1)).toarray()
+y_onehot = encoder.fit_transform(np.array(Y).reshape(-1,1))
 
-X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.4, random_state=42)
+y_onehot_dense = y_onehot.todense()
+X_train, X_test, y_train, y_test = train_test_split(X, y_onehot_dense, test_size=0.4, random_state=42)
 
 print(y_train.shape[0], y_test.shape[0], X_train.shape[0], X_test.shape[0])
 
