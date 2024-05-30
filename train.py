@@ -62,10 +62,10 @@ num_epochs = 500
 dropout_layer_value = 0.5
 
 print("Number of args given:",len(sys.argv),sys.argv)
-if len(sys.argv) == 3:
+if len(sys.argv) == 5:
     print("Custom parameters given, epochs:",num_epochs)
-    num_epochs = int(sys.argv[1])
-    dropout_layer_value = float(sys.argv[2])
+    num_epochs = int(sys.argv[2])
+    dropout_layer_value = float(sys.argv[4])
 
 model = Sequential([
     Dense(8, activation='relu', input_dim=3, kernel_regularizer=regularizers.l2(0.04)),
