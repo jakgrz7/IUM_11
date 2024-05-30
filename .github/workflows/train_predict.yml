@@ -65,7 +65,7 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: model
-            path: ./model/model.keras
+            path: ./model.keras
 
   evaluate:
       runs-on: ubuntu-latest
