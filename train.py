@@ -60,6 +60,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.4, 
 
 print(y_train.shape[0], y_test.shape[0], X_train.shape[0], X_test.shape[0])
 
+#X_train = vectorizer.fit_transform(X_train).todense()
+#X_test = vectorizer.fit_transform(X_test).todense()
+
 num_epochs = 500
 dropout_layer_value = 0.5
 
@@ -69,9 +72,9 @@ if len(sys.argv) == 3:
 
 model = Sequential([
     Dense(8, activation='relu', input_dim=3, kernel_regularizer=regularizers.l2(0.04)),
-    Dropout(dropout_layer_value),
+    #Dropout(dropout_layer_value),
     Dense(8, activation='relu', kernel_regularizer=regularizers.l2(0.04)),
-    Dropout(dropout_layer_value),
+    #Dropout(dropout_layer_value),
     Dense(4, activation='softmax', kernel_regularizer=regularizers.l2(0.04)),
 ])
 
