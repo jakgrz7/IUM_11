@@ -53,7 +53,7 @@ X = scaler.fit_transform(X)
 X = np.array(X)
 Y = np.array(Y)
 
-encoder = OneHotEncoder(sparse=False)
+encoder = OneHotEncoder()
 y_onehot = encoder.fit_transform(Y.reshape(-1,1))
 
 X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.4, random_state=42)
