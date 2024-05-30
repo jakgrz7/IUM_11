@@ -62,7 +62,7 @@ num_epochs = 500
 dropout_layer_value = 0.5
 
 if len(sys.argv) == 3:
-    epochs = int(sys.argv[1])
+    num_epochs = int(sys.argv[1])
     dropout_layer_value = float(sys.argv[2])
 
 model = Sequential([
