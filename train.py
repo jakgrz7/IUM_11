@@ -50,8 +50,8 @@ for i in range(0, len(plant_id)):
 scaler = MinMaxScaler()
 X = scaler.fit_transform(X)
 
-X = np.array(X).todense()
-Y = np.array(Y).todense()
+X = np.array(X)
+Y = np.array(Y)
 
 encoder = OneHotEncoder()
 y_onehot = encoder.fit_transform(Y.reshape(-1,1)).toarray()
