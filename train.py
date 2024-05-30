@@ -58,6 +58,9 @@ y_onehot = encoder.fit_transform(Y.reshape(-1,1))
 
 X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.4, random_state=42)
 
+y_train = tf.convert_to_tensor(y_train, dtype=tf.float32)
+y_test = tf.convert_to_tensor(y_test, dtype=tf.float32)
+
 num_epochs = 500
 dropout_layer_value = 0.5
 
