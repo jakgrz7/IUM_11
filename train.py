@@ -79,9 +79,6 @@ model.compile(optimizer='sgd',
 
 history = model.fit(X_train, y_train, epochs=num_epochs, validation_data=(X_test, y_test), verbose=2)
 
-test_loss, test_accuracy = model.evaluate(X_test, y_test, verbose=2)
-print(f"Dokładność testowa: {test_accuracy:.2%}")
-
 model.evaluate(X_test, y_test)[1]
 
 model.save('./model.keras') 
