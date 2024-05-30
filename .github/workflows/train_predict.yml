@@ -65,7 +65,7 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: model
-            path: model.keras
+            path: ./model/model.keras
 
   evaluate:
       runs-on: ubuntu-latest
@@ -78,7 +78,7 @@ jobs:
           uses: actions/download-artifact@v2
           with:
             name: model
-            path: model.keras
+            path: model
   
         - name: Set up Python
           uses: actions/setup-python@v2
