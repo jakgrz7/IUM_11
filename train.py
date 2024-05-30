@@ -50,11 +50,11 @@ for i in range(0, len(plant_id)):
 scaler = MinMaxScaler()
 X = scaler.fit_transform(X)
 
-X = np.array(X)
-Y = np.array(Y)
+X = np.array(X).toarray()
+Y = np.array(Y).toarray()
 
 encoder = OneHotEncoder()
-y_onehot = encoder.fit_transform(Y.reshape(-1,1))
+y_onehot = encoder.fit_transform(Y.reshape(-1,1)).toarray()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.4, random_state=42)
 
